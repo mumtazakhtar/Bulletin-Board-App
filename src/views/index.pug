@@ -8,21 +8,18 @@ html
 			img.logo(src="images/logo.jpg")
 			ul.nav
 				li
-					a(href="#") Home
+					a(href="index.pug") Home
 				li
-					a(href="messages.pug") Messages
+					a(href="messages.pug") View messages
 				li
-					a(href="#") contact
+					a(href="postmessages.pug") Post messages
 				li
-					a(href="#") About Me
+					a(href="#") About me
 		// header
-		fieldset.fieldset
-			form.input(method="post", action="/Messages")
-				p.paratitle Title:
-				input.title(type="text", name="title", placeholder="Give Your Message a Title")
-				p.paramessage Message:
-				input.message(type="text", name="message", placeholder="Message me ")
-				input.submit(type="submit", name="submit", value="submit")
+		.banner
+			img.banner-img(src="images/banner.jpg")
+
+
 		div.footer
 			p.para-footer
 				| @ All copyrights reserved

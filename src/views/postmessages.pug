@@ -1,0 +1,30 @@
+doctype html
+html
+	head
+		title The Bulletin Board
+		link(rel="stylesheet", type="text/css", href="css/style.css")
+	body
+		.header
+			img.logo(src="images/logo.jpg")
+			ul.nav
+				li
+					a(href="index.pug") Home
+				li
+					a(href="messages.pug") View messages
+				li
+					a(href="postmessages.pug") Post messages
+				li
+					a(href="#") About me
+		// header
+		if message
+			p.message1=message
+		fieldset.fieldset
+			form.input(method="post", action="/Messages")
+				p.paratitle Title:
+				input.title(type="text", name="title", placeholder="Give Your Message a Title")
+				p.paramessage Message:
+				input.message(type="text", name="message", placeholder="Leave a message ")
+				input.submit(type="submit", name="submit", value="submit")
+		div.footer
+			p.para-footer
+				| @ All copyrights reserved

@@ -10,11 +10,11 @@ html
                 li
                     a(href="index.pug") Home
                 li
-                    a(href="messages.pug") Messages
+                    a(href="messages.pug") View messages
                 li
-                    a(href="#") contact
+                    a(href="postmessages.pug") Post messages
                 li
-                    a(href="#") About Me
+                    a(href="#") About me
         // header
         .display-button
             input.view-messages(type="button", name="viewMessages", value="Click to view all Messages")
@@ -24,6 +24,8 @@ html
         script(src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js')
         script.
             $('.view-messages').click(function(){
+            
+
             $.get('/viewMessages', function(data){
         
             var content = data.output;
@@ -33,7 +35,12 @@ html
             Content = Content+`<p>Title:${content[i].title}<br>Message: ${content[i].body}<br> Date: ${content[i].date}</p>`
 
             }
-            $('p').append(Content)
+            $('p').toggle()
+            $('p').html(Content)
+
             }) 
             })
+
+        
+            
 
