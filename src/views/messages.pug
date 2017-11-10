@@ -29,10 +29,9 @@ html
             $.get('/viewMessages', function(data){
         
             var content = data.output;
-            console.log(data);
             var Content = ""
             for(var i=0; i<content.length;i++){
-            Content = Content+`<p>Title:${content[i].title}<br>Message: ${content[i].body}<br> Date: ${content[i].date}</p>`
+            Content = Content+`<p>Title:${content[i].title}<br>Message: ${content[i].body}</p>`
 
             }
             $('p').toggle()
